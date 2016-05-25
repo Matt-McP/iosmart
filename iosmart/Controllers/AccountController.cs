@@ -17,8 +17,11 @@ namespace iosmart.Controllers {
 
         [HttpPost]
         public ActionResult Login(string username, string password) {
-            if (UserAuthenticator.TryLogIn(username, password, HttpContext.GetOwinContext()))
+            if (UserAuthenticator.TryLogIn(username, password, HttpContext.GetOwinContext())) {
+                Session["apiUsername"] = username;
+                Session["apiPassword"] = password;
                 return RedirectToAction("Summary", "Monitoring");
+            }
             else
                 return View();
         }

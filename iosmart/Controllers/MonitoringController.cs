@@ -14,22 +14,22 @@ namespace iosmart.Controllers {
         }
 
         public ActionResult Details(string id) {
-            using (IServerStore store = new MyServersApiStore("", ""))
+            using (IServerStore store = new MyServersApiStore(Session["apiUsername"].ToString(), Session["apiPassword"].ToString()))
                 return View(store.GetFullServerInfo(id));
         }
 
         public JsonResult GetServerStatus(string id) {
-            using (IServerStore store = new MyServersApiStore("", ""))
+            using (IServerStore store = new MyServersApiStore(Session["apiUsername"].ToString(), Session["apiPassword"].ToString()))
                 return Json(store.GetServerStatus(id), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetAllServerStatuses() {
-            using (IServerStore store = new MyServersApiStore("", ""))
+            using (IServerStore store = new MyServersApiStore(Session["apiUsername"].ToString(), Session["apiPassword"].ToString()))
                 return Json(store.GetAllServerStatuses(), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetServerInfo(string id) {
-            using (IServerStore store = new MyServersApiStore("", ""))
+            using (IServerStore store = new MyServersApiStore(Session["apiUsername"].ToString(), Session["apiPassword"].ToString()))
                 return Json(store.GetServerInfo(id), JsonRequestBehavior.AllowGet);
         }
     }
