@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="@Url.Content("~/Resources/img/favicon.ico")" type="image/x-icon">
+    <title>iosmart - @ViewBag.Title</title>
+    @Styles.Render("~/css/default")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    @RenderSection("scriptsAndStyles", required: false)
+</head>
+<body>
+    <header>
+        <img src="@Url.Content("~/Resources/img/iosmart-logo.png")" />
+        <span>Smart Server Monitoring</span>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+</body>
+</html>

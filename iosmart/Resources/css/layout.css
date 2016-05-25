@@ -1,0 +1,129 @@
+﻿body {
+    font-family: 'Open Sans', Helmet, Freesans, sans-serif;
+}
+
+h1, h2, h3 {
+    font-size: 2rem;
+    color: #484848;
+    border-bottom: 1px solid #C0C0C0;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+header {
+    background: #0086ED;
+    color: #FFFFFF;
+}
+
+header img {
+    max-width: 9em;
+    margin: 1.5em 2em;
+    margin-right: 0.5em
+}
+
+header span {
+    position: relative;
+    bottom: 1em;
+}
+
+main {
+    padding: 3em 2em;
+    max-width: 63em;
+    margin: auto;
+    position: relative;
+}
+
+form {
+    color: #282828;
+    padding: 0.3em;
+}
+
+    form > div {
+        margin: 0.5em 0;
+    }
+
+    form > div > label {
+        display: block;
+    }
+
+    form > div > input {
+        margin-top: 0.2em;
+        width: 100%;
+    }
+
+input {
+    padding: 0.3em;
+}
+
+    input[type="submit"], input[type="button"], button, a.button {
+        padding: 0.5em 1em;
+        background: #006ABB;
+        border: none;
+        color: #FFFFFF;
+        font-size: 0.9em;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+table {
+    width: 100%;
+    border-radius: 0.3em;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+
+    table thead {
+        background: #0064B1;
+        color: #FFFFFF;
+    }
+
+    table thead tr td:not(:first-of-type) {
+        border-left: 1px solid #005190;
+    }
+    table tbody tr td:not(:first-of-type) {
+        border-left: 1px solid #C0C0C0;
+    }
+
+    table tbody tr:not(:last-of-type) {
+        border-bottom: 1px solid #C0C0C0;
+    }
+
+    table td {
+        padding: 0.5em
+    }
+
+.propertyFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+    
+.propertyContainer {
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    flex: 1 1 50%;
+    min-width: 20em;
+}   
+
+.propertyContainer.flexGreedy {
+    flex-basis: 100%;
+}
+    .propertyContainer div {
+        margin-left: 0.3em;
+    }
+
+        .propertyContainer div:first-child {
+            margin-bottom: 0.3em;
+            font-size: 1.1em;
+            color: #5A5A5A;
+            margin-left: 0;
+        }
+
+
+

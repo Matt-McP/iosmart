@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://rapidswitch.com/services/MyServersApi" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rapidswitch.com/services/MyServersApi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://rapidswitch.com/services/MyServersApi/Imports">
+      <xsd:import schemaLocation="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd0" namespace="http://rapidswitch.com/services/MyServersApi" />
+      <xsd:import schemaLocation="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RapidSwitch.MyServersApi" />
+      <xsd:import schemaLocation="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMyServersApi_GetProductOptionsByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOptionsByType" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductOptionsByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOptionsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductOptionsByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOptionsByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductOptionsByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOptionsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOptions" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllChassisForSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChassisForSale" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllChassisForSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllChassisForSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetChassisForSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChassisForSale" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetChassisForSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChassisForSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetBasketsByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasketsByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetBasketsByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasketsByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetBasketItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasketItem" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetBasketItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasketItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CalcCosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalcCosts" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CalcCosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalcCostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_EmptyBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmptyBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_EmptyBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmptyBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_EmptyBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmptyBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_EmptyBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmptyBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CreateBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CreateBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CreateBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CreateBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddItemToBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemToBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddItemToBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemToBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddItemToBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemToBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddItemToBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemToBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UpdateBasketItemByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBasketItemByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UpdateBasketItemByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBasketItemByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UpdateBasketItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBasketItem" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UpdateBasketItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBasketItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveItemFromBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveItemFromBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveItemFromBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveItemFromBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveItemFromBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveItemFromBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveItemFromBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveItemFromBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasketItemByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketItemByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasketItemByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketItemByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasketItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketItem" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ValidateBasketItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBasketItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ChangeBillingPeriod_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBillingPeriod" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ChangeBillingPeriod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeBillingPeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_OrderBasketByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderBasketByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_OrderBasketByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderBasketByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_OrderBasket_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderBasket" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_OrderBasket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderBasketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ChangeQuantityByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuantityByID" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ChangeQuantityByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuantityByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ChangeQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ChangeQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetOrderByPrivateRef_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPrivateRef" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetOrderByPrivateRef_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPrivateRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllPendingOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPendingOrders" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllPendingOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPendingOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllCompletedOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCompletedOrders" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllCompletedOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCompletedOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllCancelledOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCancelledOrders" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllCancelledOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCancelledOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetFAQ_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFAQ" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetFAQ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFAQResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllSections_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSections" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllSections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetSection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSection" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetSection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddNullRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNullRoute" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddNullRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNullRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ClearNullRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearNullRoute" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_ClearNullRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearNullRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetActiveNullRoutes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveNullRoutes" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetActiveNullRoutes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveNullRoutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_WriteIPSafeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteIPSafeList" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_WriteIPSafeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteIPSafeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteIPSafeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIPSafeList" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteIPSafeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIPSafeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetIPSafeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIPSafeList" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetIPSafeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIPSafeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetLicences_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicences" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetLicences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddLicence_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLicence" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddLicence_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLicenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetLicenceTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenceTypes" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetLicenceTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenceTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveLicenceByIPAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenceByIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveLicenceByIPAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenceByIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveLicenceByProviderReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenceByProviderReference" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveLicenceByProviderReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLicenceByProviderReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AreCredentialsValid_InputMessage">
+    <wsdl:part name="parameters" element="tns:AreCredentialsValid" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AreCredentialsValid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AreCredentialsValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerCount" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerIDs" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerByIPAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerByIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerByIPAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerByIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SearchServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchServers" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SearchServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllCurrentServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCurrentServers" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllCurrentServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCurrentServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerNICs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerNICs" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerNICs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerNICsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_LookupIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupIP" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_LookupIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_PowerCycleServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:PowerCycleServer" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_PowerCycleServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PowerCycleServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetRemainingKvmCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainingKvmCount" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetRemainingKvmCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainingKvmCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetRemainingRecoverySessionCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainingRecoverySessionCount" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetRemainingRecoverySessionCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainingRecoverySessionCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RequestKvm_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestKvm" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RequestKvm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestKvmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RequestRecoverySession_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestRecoverySession" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RequestRecoverySession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestRecoverySessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetRequestStatusUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestStatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetRequestStatusUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestStatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllRequestStatusUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestStatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllRequestStatusUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRequestStatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetSessionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetSessionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SetRecoveryMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRecoveryMode" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SetRecoveryMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetRecoveryModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SetYourServerRef_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetYourServerRef" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SetYourServerRef_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetYourServerRefResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CancelRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelRequest" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CancelRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_TerminateKVM_InputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateKVM" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_TerminateKVM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TerminateKVMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SuspendServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuspendServer" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SuspendServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuspendServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UnsuspendServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsuspendServer" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UnsuspendServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsuspendServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetReverseDnsEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReverseDnsEntries" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetReverseDnsEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReverseDnsEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetReverseDnsEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReverseDnsEntry" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetReverseDnsEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReverseDnsEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SetReverseDnsEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetReverseDnsEntry" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_SetReverseDnsEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetReverseDnsEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMonthlyBandwidthReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonthlyBandwidthReport" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMonthlyBandwidthReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonthlyBandwidthReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerBandwidthReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerBandwidthReport" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerBandwidthReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerBandwidthReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlert" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAlert" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllTestIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTestIDs" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllTestIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTestIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMultipleServerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultipleServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMultipleServerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultipleServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerIssues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerIssues" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerIssues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerIssuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerIssues2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerIssues2" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllServerIssues2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServerIssues2Response" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetTestHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestHistory" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetTestHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMultipleTestResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultipleTestResults" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMultipleTestResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultipleTestResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetTestTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestTypes" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetTestTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTest" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTest" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RequestIPs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestIPs" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RequestIPs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestIPsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetIPRequestStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIPRequestStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetIPRequestStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIPRequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetDomainCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainCount" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetDomainCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetForwardDnsDomains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetForwardDnsDomains" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetForwardDnsDomains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetForwardDnsDomainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetForwardDnsDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetForwardDnsDomain" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetForwardDnsDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetForwardDnsDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddForwardDnsDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddForwardDnsDomain" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddForwardDnsDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddForwardDnsDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteForwardDnsDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteForwardDnsDomain" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteForwardDnsDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteForwardDnsDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UpdateDomainHostingSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDomainHostingSettings" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_UpdateDomainHostingSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDomainHostingSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetForwardDnsEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetForwardDnsEntries" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetForwardDnsEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetForwardDnsEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteForwardDnsEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteForwardDnsEntry" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_DeleteForwardDnsEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteForwardDnsEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsARecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsARecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsARecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsARecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsAAAARecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsAAAARecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsAAAARecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsAAAARecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsCNAMERecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsCNAMERecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsCNAMERecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsCNAMERecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsMXRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsMXRecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsMXRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsMXRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsNSRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsNSRecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsNSRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsNSRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsSRVRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsSRVRecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsSRVRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsSRVRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsTXTRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsTXTRecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsTXTRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsTXTRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsSPFRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsSPFRecord" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_AddDnsSPFRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDnsSPFRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetDomainContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainContacts" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetDomainContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CheckDomainAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDomainAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CheckDomainAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDomainAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CheckMultipleDomainsAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMultipleDomainsAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_CheckMultipleDomainsAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMultipleDomainsAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllTLDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTLDs" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllTLDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTLDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RegisterDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDomain" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RegisterDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RegisterDomains_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDomains" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RegisterDomains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterDomainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetInvoiceHeaders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceHeaders" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetInvoiceHeaders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceHeadersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetInvoiceItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceItems" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetInvoiceItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetInvoiceItemsByServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceItemsByServer" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetInvoiceItemsByServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceItemsByServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAccountSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountSummary" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAccountSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetUnreadMessageCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetUnreadMessageCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetUnreadMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetUnreadMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMessageCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMessageCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetAllMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_MarkMessageAsRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsRead" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_MarkMessageAsRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkMessageAsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerCredentials" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetServerCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_WriteServerCredential_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteServerCredential" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_WriteServerCredential_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteServerCredentialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveServerCredential_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveServerCredential" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_RemoveServerCredential_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveServerCredentialResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductType" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTypes" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductInfoFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInfoFields" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductInfoFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductInfoFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRules" />
+  </wsdl:message>
+  <wsdl:message name="IMyServersApi_GetProductRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductRulesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMyServersApi">
+    <wsdl:operation name="GetProductOptionsByType">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsByType" message="tns:IMyServersApi_GetProductOptionsByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsByTypeResponse" message="tns:IMyServersApi_GetProductOptionsByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOptionsByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsByID" message="tns:IMyServersApi_GetProductOptionsByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsByIDResponse" message="tns:IMyServersApi_GetProductOptionsByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOptions">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptions" message="tns:IMyServersApi_GetProductOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsResponse" message="tns:IMyServersApi_GetProductOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChassisForSale">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllChassisForSale" message="tns:IMyServersApi_GetAllChassisForSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllChassisForSaleResponse" message="tns:IMyServersApi_GetAllChassisForSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChassisForSale">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetChassisForSale" message="tns:IMyServersApi_GetChassisForSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetChassisForSaleResponse" message="tns:IMyServersApi_GetChassisForSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasket" message="tns:IMyServersApi_GetBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketResponse" message="tns:IMyServersApi_GetBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketsByEmail">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketsByEmail" message="tns:IMyServersApi_GetBasketsByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketsByEmailResponse" message="tns:IMyServersApi_GetBasketsByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketItem">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketItem" message="tns:IMyServersApi_GetBasketItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketItemResponse" message="tns:IMyServersApi_GetBasketItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcCosts">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CalcCosts" message="tns:IMyServersApi_CalcCosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CalcCostsResponse" message="tns:IMyServersApi_CalcCosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteBasketByID" message="tns:IMyServersApi_DeleteBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteBasketByIDResponse" message="tns:IMyServersApi_DeleteBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteBasket" message="tns:IMyServersApi_DeleteBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteBasketResponse" message="tns:IMyServersApi_DeleteBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmptyBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/EmptyBasketByID" message="tns:IMyServersApi_EmptyBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/EmptyBasketByIDResponse" message="tns:IMyServersApi_EmptyBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmptyBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/EmptyBasket" message="tns:IMyServersApi_EmptyBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/EmptyBasketResponse" message="tns:IMyServersApi_EmptyBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CreateBasket" message="tns:IMyServersApi_CreateBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CreateBasketResponse" message="tns:IMyServersApi_CreateBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CreateBasketByID" message="tns:IMyServersApi_CreateBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CreateBasketByIDResponse" message="tns:IMyServersApi_CreateBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddItemToBasketByID" message="tns:IMyServersApi_AddItemToBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddItemToBasketByIDResponse" message="tns:IMyServersApi_AddItemToBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddItemToBasket" message="tns:IMyServersApi_AddItemToBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddItemToBasketResponse" message="tns:IMyServersApi_AddItemToBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBasketItemByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateBasketItemByID" message="tns:IMyServersApi_UpdateBasketItemByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateBasketItemByIDResponse" message="tns:IMyServersApi_UpdateBasketItemByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBasketItem">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateBasketItem" message="tns:IMyServersApi_UpdateBasketItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateBasketItemResponse" message="tns:IMyServersApi_UpdateBasketItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemFromBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveItemFromBasketByID" message="tns:IMyServersApi_RemoveItemFromBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveItemFromBasketByIDResponse" message="tns:IMyServersApi_RemoveItemFromBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemFromBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveItemFromBasket" message="tns:IMyServersApi_RemoveItemFromBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveItemFromBasketResponse" message="tns:IMyServersApi_RemoveItemFromBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketByID" message="tns:IMyServersApi_ValidateBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketByIDResponse" message="tns:IMyServersApi_ValidateBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasket" message="tns:IMyServersApi_ValidateBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketResponse" message="tns:IMyServersApi_ValidateBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasketItemByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketItemByID" message="tns:IMyServersApi_ValidateBasketItemByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketItemByIDResponse" message="tns:IMyServersApi_ValidateBasketItemByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasketItem">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketItem" message="tns:IMyServersApi_ValidateBasketItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketItemResponse" message="tns:IMyServersApi_ValidateBasketItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBillingPeriod">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeBillingPeriod" message="tns:IMyServersApi_ChangeBillingPeriod_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeBillingPeriodResponse" message="tns:IMyServersApi_ChangeBillingPeriod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderBasketByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/OrderBasketByID" message="tns:IMyServersApi_OrderBasketByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/OrderBasketByIDResponse" message="tns:IMyServersApi_OrderBasketByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderBasket">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/OrderBasket" message="tns:IMyServersApi_OrderBasket_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/OrderBasketResponse" message="tns:IMyServersApi_OrderBasket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuantityByID">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeQuantityByID" message="tns:IMyServersApi_ChangeQuantityByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeQuantityByIDResponse" message="tns:IMyServersApi_ChangeQuantityByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuantity">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeQuantity" message="tns:IMyServersApi_ChangeQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeQuantityResponse" message="tns:IMyServersApi_ChangeQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetOrder" message="tns:IMyServersApi_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetOrderResponse" message="tns:IMyServersApi_GetOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPrivateRef">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetOrderByPrivateRef" message="tns:IMyServersApi_GetOrderByPrivateRef_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetOrderByPrivateRefResponse" message="tns:IMyServersApi_GetOrderByPrivateRef_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPendingOrders">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllPendingOrders" message="tns:IMyServersApi_GetAllPendingOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllPendingOrdersResponse" message="tns:IMyServersApi_GetAllPendingOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompletedOrders">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCompletedOrders" message="tns:IMyServersApi_GetAllCompletedOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCompletedOrdersResponse" message="tns:IMyServersApi_GetAllCompletedOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCancelledOrders">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCancelledOrders" message="tns:IMyServersApi_GetAllCancelledOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCancelledOrdersResponse" message="tns:IMyServersApi_GetAllCancelledOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFAQ">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetFAQ" message="tns:IMyServersApi_GetFAQ_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetFAQResponse" message="tns:IMyServersApi_GetFAQ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSections">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllSections" message="tns:IMyServersApi_GetAllSections_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllSectionsResponse" message="tns:IMyServersApi_GetAllSections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuestions">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllQuestions" message="tns:IMyServersApi_GetAllQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllQuestionsResponse" message="tns:IMyServersApi_GetAllQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSection">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetSection" message="tns:IMyServersApi_GetSection_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetSectionResponse" message="tns:IMyServersApi_GetSection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestion">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetQuestion" message="tns:IMyServersApi_GetQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetQuestionResponse" message="tns:IMyServersApi_GetQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNullRoute">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddNullRoute" message="tns:IMyServersApi_AddNullRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddNullRouteResponse" message="tns:IMyServersApi_AddNullRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearNullRoute">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ClearNullRoute" message="tns:IMyServersApi_ClearNullRoute_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ClearNullRouteResponse" message="tns:IMyServersApi_ClearNullRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveNullRoutes">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetActiveNullRoutes" message="tns:IMyServersApi_GetActiveNullRoutes_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetActiveNullRoutesResponse" message="tns:IMyServersApi_GetActiveNullRoutes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteIPSafeList">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/WriteIPSafeList" message="tns:IMyServersApi_WriteIPSafeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/WriteIPSafeListResponse" message="tns:IMyServersApi_WriteIPSafeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPSafeList">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteIPSafeList" message="tns:IMyServersApi_DeleteIPSafeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteIPSafeListResponse" message="tns:IMyServersApi_DeleteIPSafeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIPSafeList">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetIPSafeList" message="tns:IMyServersApi_GetIPSafeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetIPSafeListResponse" message="tns:IMyServersApi_GetIPSafeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicences">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetLicences" message="tns:IMyServersApi_GetLicences_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetLicencesResponse" message="tns:IMyServersApi_GetLicences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLicence">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddLicence" message="tns:IMyServersApi_AddLicence_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddLicenceResponse" message="tns:IMyServersApi_AddLicence_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenceTypes">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetLicenceTypes" message="tns:IMyServersApi_GetLicenceTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetLicenceTypesResponse" message="tns:IMyServersApi_GetLicenceTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenceByIPAddress">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveLicenceByIPAddress" message="tns:IMyServersApi_RemoveLicenceByIPAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveLicenceByIPAddressResponse" message="tns:IMyServersApi_RemoveLicenceByIPAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenceByProviderReference">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveLicenceByProviderReference" message="tns:IMyServersApi_RemoveLicenceByProviderReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveLicenceByProviderReferenceResponse" message="tns:IMyServersApi_RemoveLicenceByProviderReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AreCredentialsValid">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AreCredentialsValid" message="tns:IMyServersApi_AreCredentialsValid_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AreCredentialsValidResponse" message="tns:IMyServersApi_AreCredentialsValid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCount">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerCount" message="tns:IMyServersApi_GetServerCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerCountResponse" message="tns:IMyServersApi_GetServerCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerIDs">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIDs" message="tns:IMyServersApi_GetAllServerIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIDsResponse" message="tns:IMyServersApi_GetAllServerIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerByIPAddress">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerByIPAddress" message="tns:IMyServersApi_GetServerByIPAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerByIPAddressResponse" message="tns:IMyServersApi_GetServerByIPAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDetails">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerDetails" message="tns:IMyServersApi_GetServerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerDetailsResponse" message="tns:IMyServersApi_GetServerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerDetails">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerDetails" message="tns:IMyServersApi_GetAllServerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerDetailsResponse" message="tns:IMyServersApi_GetAllServerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchServers">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SearchServers" message="tns:IMyServersApi_SearchServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SearchServersResponse" message="tns:IMyServersApi_SearchServers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCurrentServers">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCurrentServers" message="tns:IMyServersApi_GetAllCurrentServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCurrentServersResponse" message="tns:IMyServersApi_GetAllCurrentServers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerNICs">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerNICs" message="tns:IMyServersApi_GetServerNICs_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerNICsResponse" message="tns:IMyServersApi_GetServerNICs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupIP">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/LookupIP" message="tns:IMyServersApi_LookupIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/LookupIPResponse" message="tns:IMyServersApi_LookupIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PowerCycleServer">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/PowerCycleServer" message="tns:IMyServersApi_PowerCycleServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/PowerCycleServerResponse" message="tns:IMyServersApi_PowerCycleServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingKvmCount">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRemainingKvmCount" message="tns:IMyServersApi_GetRemainingKvmCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRemainingKvmCountResponse" message="tns:IMyServersApi_GetRemainingKvmCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingRecoverySessionCount">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRemainingRecoverySessionCount" message="tns:IMyServersApi_GetRemainingRecoverySessionCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRemainingRecoverySessionCountResponse" message="tns:IMyServersApi_GetRemainingRecoverySessionCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestKvm">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestKvm" message="tns:IMyServersApi_RequestKvm_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestKvmResponse" message="tns:IMyServersApi_RequestKvm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestRecoverySession">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestRecoverySession" message="tns:IMyServersApi_RequestRecoverySession_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestRecoverySessionResponse" message="tns:IMyServersApi_RequestRecoverySession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestStatusUpdate">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRequestStatusUpdate" message="tns:IMyServersApi_GetRequestStatusUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRequestStatusUpdateResponse" message="tns:IMyServersApi_GetRequestStatusUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestStatusUpdate">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllRequestStatusUpdate" message="tns:IMyServersApi_GetAllRequestStatusUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllRequestStatusUpdateResponse" message="tns:IMyServersApi_GetAllRequestStatusUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionDetails">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetSessionDetails" message="tns:IMyServersApi_GetSessionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetSessionDetailsResponse" message="tns:IMyServersApi_GetSessionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRecoveryMode">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetRecoveryMode" message="tns:IMyServersApi_SetRecoveryMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetRecoveryModeResponse" message="tns:IMyServersApi_SetRecoveryMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetYourServerRef">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetYourServerRef" message="tns:IMyServersApi_SetYourServerRef_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetYourServerRefResponse" message="tns:IMyServersApi_SetYourServerRef_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelRequest">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CancelRequest" message="tns:IMyServersApi_CancelRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CancelRequestResponse" message="tns:IMyServersApi_CancelRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TerminateKVM">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/TerminateKVM" message="tns:IMyServersApi_TerminateKVM_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/TerminateKVMResponse" message="tns:IMyServersApi_TerminateKVM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuspendServer">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SuspendServer" message="tns:IMyServersApi_SuspendServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SuspendServerResponse" message="tns:IMyServersApi_SuspendServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnsuspendServer">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UnsuspendServer" message="tns:IMyServersApi_UnsuspendServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UnsuspendServerResponse" message="tns:IMyServersApi_UnsuspendServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReverseDnsEntries">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetReverseDnsEntries" message="tns:IMyServersApi_GetReverseDnsEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetReverseDnsEntriesResponse" message="tns:IMyServersApi_GetReverseDnsEntries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReverseDnsEntry">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetReverseDnsEntry" message="tns:IMyServersApi_GetReverseDnsEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetReverseDnsEntryResponse" message="tns:IMyServersApi_GetReverseDnsEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReverseDnsEntry">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetReverseDnsEntry" message="tns:IMyServersApi_SetReverseDnsEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetReverseDnsEntryResponse" message="tns:IMyServersApi_SetReverseDnsEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyBandwidthReport">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMonthlyBandwidthReport" message="tns:IMyServersApi_GetMonthlyBandwidthReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMonthlyBandwidthReportResponse" message="tns:IMyServersApi_GetMonthlyBandwidthReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerBandwidthReport">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerBandwidthReport" message="tns:IMyServersApi_GetServerBandwidthReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerBandwidthReportResponse" message="tns:IMyServersApi_GetServerBandwidthReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlerts">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAlerts" message="tns:IMyServersApi_GetAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAlertsResponse" message="tns:IMyServersApi_GetAlerts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAlert">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddAlert" message="tns:IMyServersApi_AddAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddAlertResponse" message="tns:IMyServersApi_AddAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAlert">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveAlert" message="tns:IMyServersApi_RemoveAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveAlertResponse" message="tns:IMyServersApi_RemoveAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTestIDs">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllTestIDs" message="tns:IMyServersApi_GetAllTestIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllTestIDsResponse" message="tns:IMyServersApi_GetAllTestIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerStatus" message="tns:IMyServersApi_GetServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerStatusResponse" message="tns:IMyServersApi_GetServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleServerStatus">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMultipleServerStatus" message="tns:IMyServersApi_GetMultipleServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMultipleServerStatusResponse" message="tns:IMyServersApi_GetMultipleServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerIssues">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIssues" message="tns:IMyServersApi_GetAllServerIssues_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIssuesResponse" message="tns:IMyServersApi_GetAllServerIssues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerIssues2">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIssues2" message="tns:IMyServersApi_GetAllServerIssues2_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIssues2Response" message="tns:IMyServersApi_GetAllServerIssues2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestHistory">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetTestHistory" message="tns:IMyServersApi_GetTestHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetTestHistoryResponse" message="tns:IMyServersApi_GetTestHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleTestResults">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMultipleTestResults" message="tns:IMyServersApi_GetMultipleTestResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMultipleTestResultsResponse" message="tns:IMyServersApi_GetMultipleTestResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestTypes">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetTestTypes" message="tns:IMyServersApi_GetTestTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetTestTypesResponse" message="tns:IMyServersApi_GetTestTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTest">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddTest" message="tns:IMyServersApi_AddTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddTestResponse" message="tns:IMyServersApi_AddTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTest">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveTest" message="tns:IMyServersApi_RemoveTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveTestResponse" message="tns:IMyServersApi_RemoveTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestIPs">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestIPs" message="tns:IMyServersApi_RequestIPs_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestIPsResponse" message="tns:IMyServersApi_RequestIPs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIPRequestStatus">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetIPRequestStatus" message="tns:IMyServersApi_GetIPRequestStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetIPRequestStatusResponse" message="tns:IMyServersApi_GetIPRequestStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainCount">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetDomainCount" message="tns:IMyServersApi_GetDomainCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetDomainCountResponse" message="tns:IMyServersApi_GetDomainCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForwardDnsDomains">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsDomains" message="tns:IMyServersApi_GetForwardDnsDomains_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsDomainsResponse" message="tns:IMyServersApi_GetForwardDnsDomains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForwardDnsDomain">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsDomain" message="tns:IMyServersApi_GetForwardDnsDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsDomainResponse" message="tns:IMyServersApi_GetForwardDnsDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddForwardDnsDomain">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddForwardDnsDomain" message="tns:IMyServersApi_AddForwardDnsDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddForwardDnsDomainResponse" message="tns:IMyServersApi_AddForwardDnsDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForwardDnsDomain">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteForwardDnsDomain" message="tns:IMyServersApi_DeleteForwardDnsDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteForwardDnsDomainResponse" message="tns:IMyServersApi_DeleteForwardDnsDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainHostingSettings">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateDomainHostingSettings" message="tns:IMyServersApi_UpdateDomainHostingSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateDomainHostingSettingsResponse" message="tns:IMyServersApi_UpdateDomainHostingSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForwardDnsEntries">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsEntries" message="tns:IMyServersApi_GetForwardDnsEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsEntriesResponse" message="tns:IMyServersApi_GetForwardDnsEntries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForwardDnsEntry">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteForwardDnsEntry" message="tns:IMyServersApi_DeleteForwardDnsEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteForwardDnsEntryResponse" message="tns:IMyServersApi_DeleteForwardDnsEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsARecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsARecord" message="tns:IMyServersApi_AddDnsARecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsARecordResponse" message="tns:IMyServersApi_AddDnsARecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsAAAARecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsAAAARecord" message="tns:IMyServersApi_AddDnsAAAARecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsAAAARecordResponse" message="tns:IMyServersApi_AddDnsAAAARecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsCNAMERecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsCNAMERecord" message="tns:IMyServersApi_AddDnsCNAMERecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsCNAMERecordResponse" message="tns:IMyServersApi_AddDnsCNAMERecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsMXRecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsMXRecord" message="tns:IMyServersApi_AddDnsMXRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsMXRecordResponse" message="tns:IMyServersApi_AddDnsMXRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsNSRecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsNSRecord" message="tns:IMyServersApi_AddDnsNSRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsNSRecordResponse" message="tns:IMyServersApi_AddDnsNSRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsSRVRecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsSRVRecord" message="tns:IMyServersApi_AddDnsSRVRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsSRVRecordResponse" message="tns:IMyServersApi_AddDnsSRVRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsTXTRecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsTXTRecord" message="tns:IMyServersApi_AddDnsTXTRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsTXTRecordResponse" message="tns:IMyServersApi_AddDnsTXTRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsSPFRecord">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsSPFRecord" message="tns:IMyServersApi_AddDnsSPFRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsSPFRecordResponse" message="tns:IMyServersApi_AddDnsSPFRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainContacts">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetDomainContacts" message="tns:IMyServersApi_GetDomainContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetDomainContactsResponse" message="tns:IMyServersApi_GetDomainContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDomainAvailability">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CheckDomainAvailability" message="tns:IMyServersApi_CheckDomainAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CheckDomainAvailabilityResponse" message="tns:IMyServersApi_CheckDomainAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMultipleDomainsAvailability">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CheckMultipleDomainsAvailability" message="tns:IMyServersApi_CheckMultipleDomainsAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CheckMultipleDomainsAvailabilityResponse" message="tns:IMyServersApi_CheckMultipleDomainsAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTLDs">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllTLDs" message="tns:IMyServersApi_GetAllTLDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllTLDsResponse" message="tns:IMyServersApi_GetAllTLDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDomain">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RegisterDomain" message="tns:IMyServersApi_RegisterDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RegisterDomainResponse" message="tns:IMyServersApi_RegisterDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDomains">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RegisterDomains" message="tns:IMyServersApi_RegisterDomains_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RegisterDomainsResponse" message="tns:IMyServersApi_RegisterDomains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceHeaders">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceHeaders" message="tns:IMyServersApi_GetInvoiceHeaders_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceHeadersResponse" message="tns:IMyServersApi_GetInvoiceHeaders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceItems">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceItems" message="tns:IMyServersApi_GetInvoiceItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceItemsResponse" message="tns:IMyServersApi_GetInvoiceItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceItemsByServer">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceItemsByServer" message="tns:IMyServersApi_GetInvoiceItemsByServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceItemsByServerResponse" message="tns:IMyServersApi_GetInvoiceItemsByServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSummary">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAccountSummary" message="tns:IMyServersApi_GetAccountSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAccountSummaryResponse" message="tns:IMyServersApi_GetAccountSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessageCount">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetUnreadMessageCount" message="tns:IMyServersApi_GetUnreadMessageCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetUnreadMessageCountResponse" message="tns:IMyServersApi_GetUnreadMessageCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessages">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetUnreadMessages" message="tns:IMyServersApi_GetUnreadMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetUnreadMessagesResponse" message="tns:IMyServersApi_GetUnreadMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCount">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMessageCount" message="tns:IMyServersApi_GetMessageCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMessageCountResponse" message="tns:IMyServersApi_GetMessageCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllMessages" message="tns:IMyServersApi_GetAllMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllMessagesResponse" message="tns:IMyServersApi_GetAllMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMessage" message="tns:IMyServersApi_GetMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMessageResponse" message="tns:IMyServersApi_GetMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageAsRead">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/MarkMessageAsRead" message="tns:IMyServersApi_MarkMessageAsRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/MarkMessageAsReadResponse" message="tns:IMyServersApi_MarkMessageAsRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCredentials">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerCredentials" message="tns:IMyServersApi_GetServerCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerCredentialsResponse" message="tns:IMyServersApi_GetServerCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteServerCredential">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/WriteServerCredential" message="tns:IMyServersApi_WriteServerCredential_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/WriteServerCredentialResponse" message="tns:IMyServersApi_WriteServerCredential_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveServerCredential">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveServerCredential" message="tns:IMyServersApi_RemoveServerCredential_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveServerCredentialResponse" message="tns:IMyServersApi_RemoveServerCredential_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductType">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductType" message="tns:IMyServersApi_GetProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductTypeResponse" message="tns:IMyServersApi_GetProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductTypes">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductTypes" message="tns:IMyServersApi_GetProductTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductTypesResponse" message="tns:IMyServersApi_GetProductTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProduct" message="tns:IMyServersApi_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductResponse" message="tns:IMyServersApi_GetProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProducts" message="tns:IMyServersApi_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductsResponse" message="tns:IMyServersApi_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfoFields">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductInfoFields" message="tns:IMyServersApi_GetProductInfoFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductInfoFieldsResponse" message="tns:IMyServersApi_GetProductInfoFields_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRules">
+      <wsdl:input wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductRules" message="tns:IMyServersApi_GetProductRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductRulesResponse" message="tns:IMyServersApi_GetProductRules_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

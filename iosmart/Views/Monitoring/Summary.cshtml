@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Summary";
+}
+@section scriptsAndStyles {
+    <link href="@Url.Content("~/Resources/css/Monitoring/Summary.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Resources/js/Monitoring/Summary.js")" type="text/javascript"></script>
+}
+<h2>Summary</h2>
+
+<div id="polledAtContainer">
+    <span>Server statuses last polled at </span>
+    <span id="lastPolledTimeText"></span>
+</div>
+<div id="summaryContainer">
+    <div class="loader">
+        <i class="fa fa-spin fa-spinner"></i>
+        <span>Loading server summary...</span>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿#iconContainer {
+    text-align: center;
+    margin: 1em;
+}
+
+#iconContainer i {
+    font-size: 10em;
+    margin: auto;
+    width: 100%;
+    color: #0064B1;
+    cursor: pointer;
+    transition: color ease 1s;
+}
+
+    #iconContainer:not([data-status="OK"]) i {
+        color: #860000;
+    }
+
+    #iconContainer div:first-of-type {
+        font-size: 1.1em;
+    }
+
+.accordian .head {
+    padding: 1em;
+    border: 1px solid #000000;
+    cursor: pointer;
+    background: #D4D4D4;
+    color: #2F2F2F;
+}
+
+    .accordian .head div {
+        display: inline-block;
+    }
+
+    .accordian .head i {
+        float: right;
+        font-size: 1.2em;
+    }
+
+.accordian.open .head i {
+    transform: rotateX(180deg);
+}
+
+.accordian .body {
+    padding: 0em 1em;
+    background: #EFEFEF;
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease 0.5s;
+    border: 1px solid #A7A7A7;
+    border-top: none;
+    border-bottom: none;
+}
+
+.accordian.open .body {
+    max-height: 1000px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+main .accordian:last-of-type.open .body {
+    border-bottom: 1px solid #A7A7A7;
+}
+
+.testResults {
+    margin-left: 0.3em;
+    margin-bottom: 1em;
+}
+
+#polledAtContainer {
+    text-align: right;
+    font-size: 0.9em;
+}
+
+#backToSummary {
+    position: absolute;
+    top: 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #0086ED;
+}

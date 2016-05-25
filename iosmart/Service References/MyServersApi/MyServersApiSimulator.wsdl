@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://rapidswitch.com/services/MyServersApi" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyServersApiSimulator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IMyServersApi_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://rapidswitch.com/services/MyServersApi" location="https://api.rapidswitch.com/MyServersApi/Simulator.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IMyServersApi" type="i0:IMyServersApi">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IMyServersApi_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProductOptionsByType">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOptionsByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptionsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOptions">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllChassisForSale">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllChassisForSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChassisForSale">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetChassisForSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketsByEmail">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketsByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasketItem">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetBasketItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcCosts">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CalcCosts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmptyBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/EmptyBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmptyBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/EmptyBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CreateBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CreateBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddItemToBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddItemToBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBasketItemByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateBasketItemByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBasketItem">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateBasketItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemFromBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveItemFromBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveItemFromBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveItemFromBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasketItemByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketItemByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBasketItem">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ValidateBasketItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeBillingPeriod">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeBillingPeriod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderBasketByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/OrderBasketByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderBasket">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/OrderBasket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuantityByID">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeQuantityByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuantity">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ChangeQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPrivateRef">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetOrderByPrivateRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPendingOrders">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllPendingOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompletedOrders">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCompletedOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCancelledOrders">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCancelledOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFAQ">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetFAQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSections">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllSections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuestions">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSection">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetSection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestion">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNullRoute">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddNullRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearNullRoute">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/ClearNullRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveNullRoutes">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetActiveNullRoutes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteIPSafeList">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/WriteIPSafeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPSafeList">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteIPSafeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPSafeList">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetIPSafeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicences">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetLicences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLicence">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddLicence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenceTypes">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetLicenceTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenceByIPAddress">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveLicenceByIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLicenceByProviderReference">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveLicenceByProviderReference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AreCredentialsValid">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AreCredentialsValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCount">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerIDs">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerByIPAddress">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerByIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDetails">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerDetails">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchServers">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SearchServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCurrentServers">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllCurrentServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerNICs">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerNICs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupIP">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/LookupIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PowerCycleServer">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/PowerCycleServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingKvmCount">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRemainingKvmCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainingRecoverySessionCount">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRemainingRecoverySessionCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestKvm">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestKvm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestRecoverySession">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestRecoverySession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestStatusUpdate">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetRequestStatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRequestStatusUpdate">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllRequestStatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionDetails">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetSessionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRecoveryMode">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetRecoveryMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetYourServerRef">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetYourServerRef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelRequest">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CancelRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TerminateKVM">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/TerminateKVM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuspendServer">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SuspendServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnsuspendServer">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UnsuspendServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReverseDnsEntries">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetReverseDnsEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReverseDnsEntry">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetReverseDnsEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReverseDnsEntry">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/SetReverseDnsEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyBandwidthReport">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMonthlyBandwidthReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerBandwidthReport">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerBandwidthReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlerts">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAlert">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAlert">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTestIDs">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllTestIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleServerStatus">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMultipleServerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerIssues">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIssues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServerIssues2">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllServerIssues2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestHistory">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetTestHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleTestResults">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMultipleTestResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestTypes">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetTestTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTest">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTest">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestIPs">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RequestIPs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPRequestStatus">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetIPRequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainCount">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetDomainCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForwardDnsDomains">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsDomains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForwardDnsDomain">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddForwardDnsDomain">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddForwardDnsDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForwardDnsDomain">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteForwardDnsDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomainHostingSettings">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/UpdateDomainHostingSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForwardDnsEntries">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetForwardDnsEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForwardDnsEntry">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/DeleteForwardDnsEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsARecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsARecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsAAAARecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsAAAARecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsCNAMERecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsCNAMERecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsMXRecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsMXRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsNSRecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsNSRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsSRVRecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsSRVRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsTXTRecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsTXTRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDnsSPFRecord">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/AddDnsSPFRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainContacts">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetDomainContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDomainAvailability">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CheckDomainAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMultipleDomainsAvailability">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/CheckMultipleDomainsAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTLDs">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllTLDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDomain">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RegisterDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDomains">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RegisterDomains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceHeaders">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceHeaders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceItems">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceItemsByServer">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetInvoiceItemsByServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountSummary">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAccountSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessageCount">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetUnreadMessageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessages">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetUnreadMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCount">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMessageCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkMessageAsRead">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/MarkMessageAsRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerCredentials">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetServerCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteServerCredential">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/WriteServerCredential" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveServerCredential">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/RemoveServerCredential" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductType">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductTypes">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductInfoFields">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductInfoFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductRules">
+      <soap:operation soapAction="http://rapidswitch.com/services/MyServersApi/IMyServersApi/GetProductRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyServersApiSimulator">
+    <wsdl:port name="BasicHttpBinding_IMyServersApi" binding="tns:BasicHttpBinding_IMyServersApi">
+      <soap:address location="https://api.rapidswitch.com/MyServersApi/Simulator.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

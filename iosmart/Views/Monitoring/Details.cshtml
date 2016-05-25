@@ -1,0 +1,377 @@
+﻿@using iosmart.MyServersApi
+@model iosmart.Models.FullServerInfo
+@{
+    ViewBag.Title = "Summary";
+}
+@section scriptsAndStyles {
+    <link href="@Url.Content("~/Resources/css/Monitoring/Details.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Resources/js/Monitoring/Details.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+}
+@functions {
+    public static string ConvertLongToByteUnits(long bytesLongValue) {
+        //dangerous if working with maxed long values
+        decimal bytesValue = Convert.ToDecimal(bytesLongValue);
+        int unitIncrement = 0;
+        string[] byteSigns = new string[6] { "B", "KB" ,"MB", "GB", "TB", "PB" };
+
+        while(bytesValue > 1024 && unitIncrement < byteSigns.Length) {
+            bytesValue /= 1024;
+            unitIncrement++;
+        }
+        return string.Format("{0} {1}", Math.Round(bytesValue, 3), byteSigns[unitIncrement]);
+    }
+}
+
+<a href="/Monitoring/Summary" id="backToSummary"><i class="fa fa-angle-double-left"></i> Back to Summary</a>
+
+<h2>Details</h2>
+
+<div id="polledAtContainer">
+    <span>Server status last polled at </span>
+    <span id="lastPolledTimeText">@DateTime.Now.ToString("HH:mm:ss")</span>
+</div>
+
+<div id="iconContainer" data-status="@Model.BaseInfo.Status">
+    <i class="fa fa-desktop"></i>
+    <div>@Model.BaseInfo.YourReference</div>
+    <div>Status: <span id="statusText">@Model.BaseInfo.Status</span></div>
+</div>
+
+<div id="basicInfoContainer" class="accordian">
+    <div class="head">
+        <div>Basic Info</div>
+        <i class="fa fa-angle-double-down"></i>        
+    </div>
+    <div class="body propertyFlex">
+        <div class="propertyContainer">
+            <div>Service ID</div>
+            <div id="serviceId">@Model.BaseInfo.ServiceID</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Your Reference</div>
+            <div>@Model.BaseInfo.YourReference</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Description</div>
+            <div>@Model.BaseInfo.ServiceDescription</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Location</div>
+            <div>@Model.BaseInfo.Location</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Status</div>
+            <div>@Model.BaseInfo.Status</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Date Added</div>
+            <div>@Model.BaseInfo.DateAdded.ToShortDateString()</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Device Type</div>
+            <div>@Model.BaseInfo.DeviceType</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Service Type</div>
+            <div>@Model.BaseInfo.ServiceType</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Normal Cost</div>
+            <div>@string.Format("{0:C}", Model.BaseInfo.NormalCost)</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Extra Cost</div>
+            <div>@string.Format("{0:C}", Model.BaseInfo.ExtraCost)</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Suspended</div>
+            <div>@Model.BaseInfo.Suspended</div>
+        </div>
+
+        <div class="propertyContainer">
+            <div>Suspended by RapidSwitch</div>
+            <div>@Model.BaseInfo.SuspendedByRapidSwitch</div>
+        </div>
+    </div>
+</div>
+
+<div class="accordian">
+    <div class="head">
+        <div>IP Information</div>
+        <i class="fa fa-angle-double-down"></i>     
+    </div>
+    <div class="body">
+        <div class="propertyFlex">
+            <div class="propertyContainer">
+                <div>Primary IP Address</div>
+                <div>@Model.BaseInfo.PrimaryIP</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>All IP Addresses</div>
+                @foreach (string ipAddress in Model.BaseInfo.IPAddresses) {
+                    <div>@ipAddress</div>
+                }
+            </div>
+        </div>
+
+        @if (Model.BaseInfo.ReverseDnsEntries.Length > 0) {
+            <div class="propertyContainer">
+                <div>Reverse DNS</div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>IP Address</td>
+                        <td>Host</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (ReverseDnsEntry entry in Model.BaseInfo.ReverseDnsEntries) {
+                        <tr>
+                            <td>@entry.IPAddress</td>
+                            <td>@entry.HostName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+<div class="accordian">
+    <div class="head">
+        <div>Monitoring</div>
+        <i class="fa fa-angle-double-down"></i>     
+    </div>
+    <div class="body">
+        @foreach (CurrentMonitorStatus monitorStatus in Model.MonitorStatuses) {
+            <h3>@monitorStatus.TestName</h3>
+            <div class="testResults propertyFlex">
+                <div class="propertyContainer">
+                    <div>Test ID</div>
+                    <div>@monitorStatus.TestId</div>
+                </div>
+
+                <div class="propertyContainer">
+                    <div>Details</div>
+                    <div>@monitorStatus.StatusDetail</div>
+                </div>
+
+                <div class="propertyContainer">
+                    <div>Status Code</div>
+                    <div>@monitorStatus.StatusCode</div>
+                </div>
+
+                <div class="propertyContainer">
+                    <div>Monitored IP Address</div>
+                    <div>@monitorStatus.MonitoredIp</div>
+                </div>
+
+                <div class="propertyContainer">
+                    <div>Last Status Change</div>
+                    <div>@monitorStatus.LastStatusChange.ToString()</div>
+                </div>
+
+                <div class="propertyContainer">
+                    <div>Last Updated</div>
+                    <div>@monitorStatus.LastUpdated.ToString()</div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="accordian">
+    <div class="head">
+        <div>External Bandwidth Report</div>
+        <i class="fa fa-angle-double-down"></i>     
+    </div>
+    <div class="body">
+        <div class="propertyFlex">
+            <div class="propertyContainer flexGreedy">
+                <div>Last updated</div>
+                <div>@Model.ExternalBandwidthReport.LastUpdated</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 4 hours in</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BW4hIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 4 hours out</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BW4hOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 24 hours in</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BW24hIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 24 hours out</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BW24hOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>So far this month in</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BWSofarThisMonthIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>So far this month out</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BWSofarThisMonthOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 24 hours in (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BWPredicted24hIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 24 hours out (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BWPredicted24hOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 14 days in (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BWPredicted14dIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 14 days out (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.ExternalBandwidthReport.BWPredicted14dOut)</div>
+            </div>
+        </div>
+
+        <div id="externalBandwidthChartContainer"></div>
+
+        <table id="externalBandwidthTable" style="display:none;">
+            <thead>
+                <tr>
+                    <td>Month</td>
+                    <td>In</td>
+                    <td>Out</td>
+                    <td>Total</td>
+                    <td>95th percentile</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MonthlyBandwidthReportEntry entry in Model.ExternalMonthlyBandwidthReport) {
+                    <tr>
+                        <td>@entry.Month.ToString("yyyy-MM-dd")</td>
+                        <td>@entry.BWIn</td>
+                        <td>@entry.BWOut</td>
+                        <td>@entry.BWTotal</td>
+                        <td>@entry.BW95thPercentile</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="accordian">
+    <div class="head">
+        <div>Internal Bandwidth Report</div>
+        <i class="fa fa-angle-double-down"></i>     
+    </div>
+    <div class="body">
+        <div class="propertyFlex">
+            <div class="propertyContainer flexGreedy">
+                <div>Last updated</div>
+                <div>@Model.InternalBandwidthReport.LastUpdated</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 4 hours in</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BW4hIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 4 hours out</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BW4hOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 24 hours in</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BW24hIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Last 24 hours out</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BW24hOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>So far this month in</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BWSofarThisMonthIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>So far this month out</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BWSofarThisMonthOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 24 hours in (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BWPredicted24hIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 24 hours out (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BWPredicted24hOut)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 14 days in (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BWPredicted14dIn)</div>
+            </div>
+
+            <div class="propertyContainer">
+                <div>Next 14 days out (predicted)</div>
+                <div>@ConvertLongToByteUnits(Model.InternalBandwidthReport.BWPredicted14dOut)</div>
+            </div>
+        </div>
+
+        <div id="internalBandwidthChartContainer"></div>
+
+        <table id="internalBandwidthTable" style="display:none;">
+            <thead>
+                <tr>
+                    <td>Month</td>
+                    <td>In</td>
+                    <td>Out</td>
+                    <td>Total</td>
+                    <td>95th percentile</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MonthlyBandwidthReportEntry entry in Model.InternalMonthlyBandwidthReport) {
+                    <tr>
+                        <td>@entry.Month.ToString("MMM yyyy")</td>
+                        <td>@entry.BWIn</td>
+                        <td>@entry.BWOut</td>
+                        <td>@entry.BWTotal</td>
+                        <td>@entry.BW95thPercentile</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

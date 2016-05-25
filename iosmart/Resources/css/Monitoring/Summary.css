@@ -1,0 +1,88 @@
+﻿#summaryContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#summaryContainer .loader {
+    display: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 1.1em;
+}
+#summaryContainer .loader:only-child {
+    display: block;
+}
+
+.server {
+    padding: 1em;
+    flex: 1 1 6em;
+}
+
+    .server .main {
+        text-align: center;
+    }
+    
+        .server .main i {
+            font-size: 10em;
+            margin: auto;
+            width: 100%;
+            color: #0064B1;
+            cursor: pointer;
+            transition: color ease 1s;
+        }
+
+        .server:not([data-status="OK"]) .main i {
+            color: #860000;
+        }
+
+        .server .main div {
+            margin-bottom: 0.3em;
+        }
+
+            .server .main div:first-of-type {
+                font-size: 1.1em;
+            }
+
+    .server .main::after {
+        border: solid transparent;
+        content: " ";
+        width: 0;
+        border-width: 7px;
+        border-bottom-color: #48484D;
+        display: block;
+        margin: auto;
+        transition: all ease 0.5s;
+        opacity: 0;
+    }
+
+    .server .extra {
+        max-height: 0px;
+        overflow: hidden;
+        transition: all ease 0.5s;
+        background: #E2E2E2;
+        border-radius: 0.5em;
+        padding: 0em 1em;
+        border: solid 1px #FFFFFF;
+    }
+
+        .server .extra > div {
+            margin-left: 0.3em;
+            min-width: 0;
+        }
+    
+    .server.open .extra {
+        max-height: 400px;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-color: #48484D;
+    }
+
+    .server.open .main::after {
+        opacity: 1;
+    }
+
+#polledAtContainer {
+    text-align: right;
+    font-size: 0.9em;
+}

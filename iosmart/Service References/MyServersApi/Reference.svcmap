@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fda68478-7f4f-42f4-a7cc-c0aab82da06c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.rapidswitch.com/MyServersApi/Simulator.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MyServersApiSimulator.wsdl" MetadataType="Wsdl" ID="aa7c66a2-b478-4dea-96f9-5f746bf531a4" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?wsdl" />
+    <MetadataFile FileName="Simulator.disco" MetadataType="Disco" ID="b9c829de-2b3e-481c-b69a-8669a4d5f748" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?disco" />
+    <MetadataFile FileName="Simulator.xsd" MetadataType="Schema" ID="6c4ff3d1-8a08-4443-b2fa-c786879a1e5d" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd3" />
+    <MetadataFile FileName="Simulator1.xsd" MetadataType="Schema" ID="e1e258ea-cb24-4f19-837a-17016dbdc42f" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd2" />
+    <MetadataFile FileName="Simulator2.xsd" MetadataType="Schema" ID="3766d27d-f21f-4095-a587-c55063fae2c8" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd1" />
+    <MetadataFile FileName="Simulator.wsdl" MetadataType="Wsdl" ID="80a129db-3039-4484-a826-a43fbabb3360" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Simulator3.xsd" MetadataType="Schema" ID="20d5aff8-b487-471d-804c-49002a73263a" SourceId="1" SourceUrl="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

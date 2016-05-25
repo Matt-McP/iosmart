@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RapidSwitch.MyServersApi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RapidSwitch.MyServersApi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.rapidswitch.com/MyServersApi/Simulator.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="BillingPeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Monthly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Quarterly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Annually">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillingPeriod" nillable="true" type="tns:BillingPeriod" />
+  <xs:complexType name="ArrayOfIPSafeListEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IPSafeListEntry" nillable="true" type="tns:IPSafeListEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIPSafeListEntry" nillable="true" type="tns:ArrayOfIPSafeListEntry" />
+  <xs:complexType name="IPSafeListEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IPSafeListEntry" nillable="true" type="tns:IPSafeListEntry" />
+  <xs:simpleType name="LicenceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cPanel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">37</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cPanelVPS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">404</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LicenceType" nillable="true" type="tns:LicenceType" />
+  <xs:complexType name="ArrayOfServerStatusSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerStatusSearch" type="tns:ServerStatusSearch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerStatusSearch" nillable="true" type="tns:ArrayOfServerStatusSearch" />
+  <xs:simpleType name="ServerStatusSearch">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="AwaitingBuild" />
+      <xs:enumeration value="AwaitingDelivery" />
+      <xs:enumeration value="AwaitingInstallation" />
+      <xs:enumeration value="Built" />
+      <xs:enumeration value="Cancelled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServerStatusSearch" nillable="true" type="tns:ServerStatusSearch" />
+  <xs:complexType name="ArrayOfServerServiceTypeSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerServiceTypeSearch" type="tns:ServerServiceTypeSearch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerServiceTypeSearch" nillable="true" type="tns:ArrayOfServerServiceTypeSearch" />
+  <xs:simpleType name="ServerServiceTypeSearch">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Colo" />
+      <xs:enumeration value="Dedi" />
+      <xs:enumeration value="ManagedRack" />
+      <xs:enumeration value="Rack" />
+      <xs:enumeration value="Transit" />
+      <xs:enumeration value="VPS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServerServiceTypeSearch" nillable="true" type="tns:ServerServiceTypeSearch" />
+  <xs:complexType name="ArrayOfServerDeviceTypeSearch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerDeviceTypeSearch" type="tns:ServerDeviceTypeSearch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerDeviceTypeSearch" nillable="true" type="tns:ArrayOfServerDeviceTypeSearch" />
+  <xs:simpleType name="ServerDeviceTypeSearch">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Access_Point" />
+      <xs:enumeration value="Firewall" />
+      <xs:enumeration value="Full_Rack" />
+      <xs:enumeration value="Load_Balancer" />
+      <xs:enumeration value="Managed_Rack" />
+      <xs:enumeration value="Managed_Switch" />
+      <xs:enumeration value="Modem" />
+      <xs:enumeration value="Router" />
+      <xs:enumeration value="Server" />
+      <xs:enumeration value="Transit" />
+      <xs:enumeration value="Unmanaged_Switch" />
+      <xs:enumeration value="Virtual_Server" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServerDeviceTypeSearch" nillable="true" type="tns:ServerDeviceTypeSearch" />
+  <xs:simpleType name="RequestStatusSearch">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestStatusSearch" nillable="true" type="tns:RequestStatusSearch" />
+  <xs:simpleType name="ServerCredentialType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="SSH" />
+      <xs:enumeration value="RDP" />
+      <xs:enumeration value="HTTP" />
+      <xs:enumeration value="HTTPS" />
+      <xs:enumeration value="Database" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServerCredentialType" nillable="true" type="tns:ServerCredentialType" />
+</xs:schema>
